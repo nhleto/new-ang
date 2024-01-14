@@ -1,0 +1,13 @@
+@if (planets(); as vm) { @if (vm.loading) {
+<h1>We are LOADING</h1>
+} @else if (vm?.error) {
+<h1>Ther is an ERROR</h1>
+} @else if (vm?.data) {
+<p>{{ vm.data | json }}</p>
+} @if (!vm.loading) {
+
+<div>
+  <h1>Add a Planet</h1>
+  <button style="width: 10rem" (click)="addPlanet()">Add a Planet</button>
+</div>
+} }
